@@ -1,0 +1,130 @@
+package javaapplication2;
+import java.util.*;
+
+
+public class JavaApplication2 {
+
+   
+    public static void main(String[] args) {
+        
+        int bpuan=0,
+                kpuan=0;
+        
+      Scanner klavye=new Scanner(System.in);
+      Random rastgele=new Random();
+      
+      System.out.println("Zorluk derecesini girin : Kolay-1,Orta-2,Zor-3");
+      int zorluk=klavye.nextInt();
+      if(zorluk==1){
+      bpuan=10;
+      kpuan=30;
+      }
+      else if(zorluk==2){
+      bpuan=50;
+      kpuan=20;
+      }
+       else if(zorluk==3){
+      bpuan=70;
+      kpuan=20;
+      }
+        for (;;) {
+           
+            
+            if (bpuan >= 100) {
+                System.out.println("Bilgisayar kazandı");
+                System.out.println("Bilgisayar puanı :"+bpuan);
+                System.out.println("Kullanıcı puanı :"+kpuan);
+                break;
+            }
+            if (kpuan >= 100) {
+                System.out.println("kullanıcı kazandı");
+                System.out.println("Kullanıcı puanı :"+kpuan);
+                System.out.println("Bilgisayar puanı :"+bpuan);
+                break;
+            }
+             if (kpuan <= 0) {
+                System.out.println("Bilgisayar kazandı");
+                System.out.println("Bilgisayar puanı :"+bpuan);
+                System.out.println("Kullanıcı puanı :"+kpuan);
+                break;
+            }
+            if (bpuan <= 0) {
+                System.out.println("kullanıcı kazandı");
+                System.out.println("Kullanıcı puanı :"+kpuan);
+                System.out.println("Bilgisayar puanı :"+bpuan);
+                break;
+            }
+             int bilgisayar=rastgele.nextInt(1,4);
+             
+             System.out.println("Tercih (1-Taş,2-Kağıt,3Makas)");
+            int insan=klavye.nextInt();
+            
+            if(insan>3 || insan<1){
+            System.out.println("Geçersiz seçim");
+            continue;
+            }
+            if (bilgisayar==insan) {
+                bpuan-=5;
+                kpuan-=5;
+                System.out.println("Berabere");
+               System.out.println("Kullanıcı puan"+kpuan);
+            System.out.println("Bilgisyar puan"+bpuan);
+            }
+            
+            if (insan==1 && bilgisayar==2) 
+            {
+                
+            System.out.println("Kağıt Taşı sarar");
+            System.out.println("Bilgisayar Kazandı");
+            kpuan-=10;
+            System.out.println("Kullanıcı puan"+kpuan);
+            System.out.println("Bilgisyar puan"+bpuan);
+            }
+            if (insan==1 && bilgisayar==3) 
+            {
+                
+            System.out.println("Taş makası kırar");
+            System.out.println("kullanıcı Kazandı");
+            kpuan+=10;
+            bpuan-=10;
+           System.out.println("Kullanıcı puan"+kpuan);
+            System.out.println("Bilgisyar puan"+bpuan);
+            }
+            if (insan==2 && bilgisayar==3) 
+            {
+                
+            System.out.println("Makas kağıdı keser");
+            System.out.println("Bilgisayar Kazandı");
+            kpuan-=10;
+            bpuan+=10;
+           System.out.println("Kullanıcı puan"+kpuan);
+            System.out.println("Bilgisyar puan"+bpuan);
+            }
+            if (insan==3 && bilgisayar==1) 
+            {
+                
+            System.out.println("Taş makası kırar");
+            System.out.println("Bilgisayar Kazandı");
+            kpuan-=10;
+            bpuan+=10;
+            System.out.println("Kullanıcı puan"+kpuan);
+            System.out.println("Bilgisyar puan"+bpuan);
+            }
+            if (insan==3 && bilgisayar==2) 
+            {
+                
+            System.out.println("Makas kağıdı keser");
+            System.out.println("Kullanıcı Kazandı");
+            kpuan+=10;
+            bpuan-=10;
+            System.out.println("Kullanıcı puan"+kpuan);
+            System.out.println("Bilgisyar puan"+bpuan);
+            }
+            
+            
+            
+        }
+      
+    }
+    
+}
