@@ -1,0 +1,25 @@
+import java.util.*;
+public class HelloWorld{
+
+    public static void main(String[] args) {
+        
+        Scanner veri=new Scanner(System.in);
+        System.out.println("Diktortgenin uzun ve kisa kenarini girin");
+        int a=veri.nextInt();
+        int b=veri.nextInt();
+         Random r=new Random();
+        int c=r.nextInt(1,101);
+        hesapla(a,b,c);
+        
+    }
+    public static void hesapla(int a,int b,int c10){
+        int cevre=2*(a*b);
+        int alan=a*b;
+        int hacim=(a*b)*c;
+        
+        System.out.println("Dikdortgenin cevresi :"+cevre+" alani :"+alan+" hacmi :"+hacim);
+        
+        }
+             
+
+     }
